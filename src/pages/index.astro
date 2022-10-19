@@ -1,0 +1,209 @@
+---
+import Icon from "../components/icon.astro";
+import Img from "../components/img.astro";
+import List from "../components/list.astro";
+import Dash from "../components/dash.astro";
+---
+
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>ООО "Сапсан" - ИТ-обслуживание компаний</title>
+		<meta name="description" content="ИТ-обслуживание компаний и комплексная IT-поддержка бизнеса">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	<body
+		class="grid font-[Raleway] text-white min-h-screen grid-cols-[100%] grid-rows-[auto,1fr,auto] bg-gradient-to-tr from-black-bean via-firefly to-black-bean"
+	>
+		<header
+			class="h-[60px] lg:h-[100px] sticky top-0 z-10 bg-gradient-to-b from-black-bean/60"
+		>
+			<div class="container flex justify-between h-full items-center mx-auto px-5 lg:px-10">
+				<a href="/" class="font-bold lg:text-[32px] text-xl leading-6">
+					ООО САПСАН
+				</a>
+				<div class="grid grid-cols-3 lg:grid-cols-[repeat(3,auto)] items-center gap-2 lg:gap-5 font-medium text-2xl leading-7">
+					<a href="tel:+79687446005">
+						<Icon
+							text="lg:hidden"
+							name="phone"
+						/>
+						<span class="sr-only lg:not-sr-only">
+							+7(968)-744-60-05
+						</span>
+					</a>
+					<span class="bg-coral h-0.5 lg:w-[60px] w-full"></span>
+					<a href="mailto:it@sapsangroup.ru">
+						<Icon
+							text="lg:hidden"
+							name="mail"
+						/>
+						<span class="sr-only lg:not-sr-only">
+							it@sapsangroup.ru
+						</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section>
+				<div class="container grid gap-5 lg:gap-10 mx-auto px-5 lg:px-10">
+					<div
+						class="bg-center from-firefly to-firefly bg-cover bg-blend-color rounded-xl h-[200px]"
+						style="background-image: linear-gradient(to top, var(--tw-gradient-stops)), url(/hero.jpg);"
+					></div>
+					<h1 class="font-bold text-2xl leading-7 lg:text-5xl lg:leading-[60px] text-center">
+						ИТ-обслуживание <span class="text-coral">компаний</span>
+					</h1>
+					<ul class="grid gap-5 lg:grid-flow-col lg:gap-8">
+						{
+							[
+								'Обслуживание компьютеров, оргтехники и серверов компаний',
+								'Организация системы резервного копирования',
+								'Внедрение круглосуточного мониторинга ИТ-структуры',
+								'Регламентные работы, настройка ПО и консультации',
+								'Команда ИТ-инженеров поддержки 24/7'
+							].map((item, i) => (
+								<li class="grid items-center gap-8 grid-cols-[auto,1fr] lg:grid-cols-none lg:grid-rows-[auto,1fr] lg:justify-items-center">
+									<Icon
+										size="h-[60px] w-[60px] lg:w-[84px] lg:h-[84px]"
+										text="text-coral"
+										name={`hero-${i + 1}`}
+									/>
+									<span class="lg:text-center text-sm font-medium lg:text-base">{item}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</section>
+			<Dash/>
+			<section>
+				<div class="container items-center lg:grid-cols-[1fr,auto] grid gap-5 lg:hap-10 mx-auto px-5 lg:px-10">
+					<Img
+						src="/enginer.jpg"
+					/>
+					<div class="grid gap-5 lg:col-start-1 lg:row-start-1">
+						<h2 class="font-bold text-2xl leading-7 lg:text-5xl lg:leading-[60px]">
+							Обслуживание <span class="text-coral whitespace-nowrap">ИТ-инфраструктуры</span> включает:
+						</h2>
+						<List
+							data={[
+								'Администрирование серверов и сетевого оборудования.',
+								'Обслуживание компьютеров и оргтехники.',
+								'Резервное копирование с уведомлением.',
+								'Внедрение политики ИТ-безопасности.',
+								'Закупка компьютерного оборудования.',
+								'Автоматизированный ИТ-мониторинг.'
+							]}
+						/>
+					</div>
+				</div>
+			</section>
+			<Dash/>
+			<section>
+				<div class="container mx-auto px-5 lg:px-10">
+					<div class="py-10 lg:px-10 grid gap-5 px-5 rounded-xl bg-mineral-green lg:grid-flow-col lg:gap-14">
+						<p class="text-coral text-2xl leading-7 lg:text-5xl lg:leading-[60px] font-bold">О компании</p>
+						<p class="text-sm lg:text-base font-medium lg:columns-2 lg:gap-10 lg:pt-2">
+							Компания САПСАН основана в 2012 году. В компании работают высококвалифицированные ИТ-специалисты и бизнес-консультанты, получившие многолетний опыт в создании <br>ИТ-инфраструктур предприятий, развертывании государственных информационных систем, оказании консалтинговых услуг, решении задач системной интеграции, выполнении всех видов работ по ИТ-аутсорсингу и т.д.
+						</p>
+					</div>
+				</div>
+			</section>
+			<Dash/>
+			<section class="grid gap-10 lg:gap-20">
+				<div class="container mx-auto px-5 lg:-mb-10 lg:px-10">
+					<p class="font-bold lg:text-center text-2xl leading-7 lg:text-5xl lg:leading-[60px]"><span class="text-coral">Комплексная</span> <span class="whitespace-nowrap">IT-поддержка</span> бизнеса</p>
+				</div>
+				<div class="container items-center lg:grid-cols-[auto,1fr] grid gap-5 mx-auto px-5 lg:gap-20 lg:px-10">
+					<Img
+						src="/dev.jpg"
+					/>
+					<div class="grid gap-5 h-max">
+						<p class="font-bold text-2xl leading-7 lg:text-[32px] lg:leading-[40px]">Техническое обслуживание и ремонт средств вычислительной техники:</p>
+						<List
+							data={[
+								'Диагностика предполагаемой неисправности оборудования компонента или его части (оборудования, встроенного программного обеспечения).',
+								'Выполнение работ по расширенному техническому обслуживанию оборудования.',
+								'Выполнение профилактических работ.',
+								'Выполнение ремонтно-восстановительных работ.',
+								'Установка обновлений встроенного программного обеспечения.',
+								'Организация Центра Компетенций, предоставляющего поддержку экспертного уровня.'
+							]}
+						/>
+					</div>
+				</div>
+				<div class="container grid items-center lg:grid-cols-[1fr,auto] gap-5 mx-auto px-5 lg:gap-20 lg:px-10">
+					<div class="lg:col-start-2">
+						<Img
+							src="/analitics.jpg"
+						/>
+					</div>
+					<div class="lg:row-start-1 grid gap-5 h-max">
+						<p class="font-bold text-2xl leading-7 lg:text-[32px] lg:leading-[40px]">Аудит IT инфраструктуры:</p>
+						<List
+							data={[
+								'Анализ технического состояния оборудования.',
+								'Функциональный анализ аппаратных и программных ресурсов.',
+								'Анализ защищенности информации от внешних и внутренних угроз. Создание модели угроз безопасности информации.',
+								'Анализ организации системы бесперебойного электропитания.',
+								'Формирование рекомендаций по оптимизации ИТ Инфраструктуры.'
+							]}
+						/>
+					</div>
+				</div>
+				<div class="container grid items-center gap-5 lg:grid-cols-[auto,1fr] lg:gap-20 mx-auto px-5 lg:px-10">
+					<Img
+						src="/network.jpg"
+					/>
+					
+					<div class="grid gap-5 h-max">
+						<p class="font-bold text-2xl leading-7 lg:text-[32px] lg:leading-[40px]">Предоставление средств вычислительной техники и телекоммуникационного оборудования по сервисной схеме:</p>
+						<p class="text-coral font-medium lg:text-2xl">Услуги по аренде оборудования:</p>
+						<List
+							data={[
+								'Телекоммуникационное оборудование.',
+								'Серверное оборудование.',
+								'Источники бесперебойного питания.',
+								'Системы хранения данных.'
+							]}
+						/>
+						<p class="text-coral font-medium lg:text-2xl">Сервисная поддержка:</p>
+						<List
+							data={[
+								'Оборудование обеспечивается сервисной поддержкой на весь период аренды.'
+							]}
+						/>
+					</div>
+				</div>
+			</section>
+			<Dash/>
+		</main>
+		<footer>
+			<div class="container lg:gap-20 xl:gap-36 lg:grid-cols-[auto,1fr] mx-auto grid gap-5 px-5 pb-10">
+				<p class="font-bold text-2xl leading-7 lg:text-5xl lg:leading-[60px]">Наши <span class="text-coral">реквизиты:</span></p>
+				<div class="grid gap-10 lg:grid-cols-2 lg:pt-2">
+					<p>
+						ООО "Сапсан" — Руководитель: Гуданова Елена Сергеевна 
+						<br>(ИНН: 502014188261). 
+						<br>ИНН: 7716707820
+						<br>ОГРН: 1127746051718
+						<br>ОКПО: 38299036.
+					</p>
+					<p>
+						Зарегистрировано: 31.01.2012 
+						<br>Юридический адрес: 
+						<br>670031, Республика Бурятия, 
+						<br>г. Улан-Удэ, ул Трубачеева, д. 154, помещение 4/8.
+					</p>
+				</div>
+			</div>	
+		</footer>
+	</body>
+</html>
